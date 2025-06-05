@@ -1,0 +1,16 @@
+.label-badge {
+  display: inline-block;
+  padding: 0px 12px;
+  background-color: #0B1D36;
+  border-radius: 28px;
+  border: 2.5px solid #263B6B;
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 18px;
+  letter-spacing: -0.5px;
+  color: #C9C9C9;
+  text-align: center;
+  margin-bottom: 20px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}

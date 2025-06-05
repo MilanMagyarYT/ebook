@@ -1,0 +1,28 @@
+.info-box {
+    background-color: #FFFDF3;
+    width: 357px;
+    height: 70px;
+    border-radius: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 12px;
+    box-sizing: border-box;
+    margin-top: 10px;
+  }
+  
+  .info-box p {
+    font-family: 'Inter', sans-serif;
+    font-size: 18px;
+    font-weight: 600;
+    line-height: 26px;
+    letter-spacing: -0.5px;
+    color: #12283E;
+    text-align: center;
+  }
+  
+  .info-box .highlight {
+    color: #FFA80F;
+    font-weight: 600;
+  }
+  
