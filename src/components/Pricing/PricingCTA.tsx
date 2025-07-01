@@ -1,3 +1,4 @@
+import { loadStripe } from '@stripe/stripe-js';
 import './PricingCTA.css';
 
 interface PricingCTAProps {
@@ -6,25 +7,19 @@ interface PricingCTAProps {
 
 export default function PricingCTA({ text }: PricingCTAProps) {
   const handleCheckout = async () => {
-    try {
-      const res = await fetch('/api/create-checkout-session', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
+    const stripe = await loadStripe(process.env.REACT_APP_STRIPE_PUBLIC_KEY!);
+
+    await stripe?.redirectToCheckout({
+      lineItems: [
+        {
+          price: process.env.REACT_APP_STRIPE_PRICE_ID!,
+          quantity: 1,
         },
-      });
-
-      const data = await res.json();
-
-      if (data.url) {
-        window.location.href = data.url;
-      } else {
-        alert('Something went wrong with the checkout.');
-      }
-    } catch (err) {
-      console.error(err);
-      alert('Failed to start checkout session.');
-    }
+      ],
+      mode: 'payment',
+      successUrl: `${window.location.origin}/success`,
+      cancelUrl: `${window.location.origin}/cancel`,
+    });
   };
 
   return (
