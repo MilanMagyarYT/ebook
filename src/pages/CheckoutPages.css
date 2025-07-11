@@ -18,7 +18,9 @@
 .cancel  .icon{color:#dc2626}
 
 .hero-logo {
-  display: block;           /* add this */
+  display: flex;           /* add this */
   width: 240px;
   margin: 1rem auto;        /* now auto left/right centers */
+  align-items: center;
+  flex-direction: column;
 }
