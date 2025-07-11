@@ -78,6 +78,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
 
   if (event.type === 'checkout.session.completed') {
     const session = event.data.object as StripeNS.Checkout.Session;
+    
     const email = session.customer_details?.email;
     const name = session.customer_details?.name ?? '';
     if (!email) return res.status(400).send('No email found');
