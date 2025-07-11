@@ -45,7 +45,7 @@ const emailTemplate = `
         <p style="margin:32px 0 0;font-size:13px;color:#666">Need help? Reply to this e-mail: findstudenthousingnl@gmail.com.</p>
       </td></tr>
       <tr><td style="background:#FFA80F;padding:20px 32px;font-size:11px;color:#777">
-        Find Student Housing • Nieuwe Ebbingestraat 97, 9712 ND Groningen, NL<br>
+        Find Student Housing<br>
         <a href="https://www.instagram.com/allaboutstudenthousing.nl/" style="color:#777">Instagram Page</a> •
         <a href="https://www.youtube.com/@allaboutstudenthousingnl"   style="color:#777">YouTube Page</a>
       </td></tr>
