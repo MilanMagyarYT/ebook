@@ -19,7 +19,5 @@
 
 .hero-logo {
   width: 240px;
-  height: auto;
-  margin-top: 10px;
-  margin-bottom: 35px;
+  margin: auto 1rem;
 }
