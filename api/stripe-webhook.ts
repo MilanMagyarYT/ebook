@@ -42,12 +42,12 @@ const emailTemplate = /*html*/ `
           <tr><td>Your Student Housing Guide (PDF)</td><td align="right">€{{TOTAL_EUR}}</td></tr>
           <tr><td style="padding-top:8px;border-top:1px solid #eee"><strong>Total</strong></td><td align="right" style="padding-top:8px;border-top:1px solid #eee"><strong>€{{TOTAL_EUR}}</strong></td></tr>
         </table>
-        <p style="margin:32px 0 0;font-size:13px;color:#666">Need help? Reply to this e-mail or visit our <a href="https://findstudenthousing.nl/faq" style="color:#0B1D36">FAQ page</a>.</p>
+        <p style="margin:32px 0 0;font-size:13px;color:#666">Need help? Reply to this e-mail: findstudenthousingnl@gmail.com.</p>
       </td></tr>
-      <tr><td style="background:#f1f3f5;padding:20px 32px;font-size:11px;color:#777">
+      <tr><td style="background:#FFA80F;padding:20px 32px;font-size:11px;color:#777">
         Find Student Housing • Nieuwe Ebbingestraat 97, 9712 ND Groningen, NL<br>
-        <a href="https://findstudenthousing.nl/privacy" style="color:#777">Privacy Policy</a> •
-        <a href="https://findstudenthousing.nl/terms"   style="color:#777">Terms of Service</a>
+        <a href="https://www.instagram.com/allaboutstudenthousing.nl/" style="color:#777">Instagram Page</a> •
+        <a href="https://www.youtube.com/@allaboutstudenthousingnl"   style="color:#777">YouTube Page</a>
       </td></tr>
     </table>
   </td></tr>
@@ -87,8 +87,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
     const total  = (session.amount_total! / 100).toFixed(2);
     const link   = `${process.env.BASE_URL}/api/download?session=${session.id}`;
 
-    const base        = process.env.BASE_URL;
-    const logoURL     = `${base}/logo-email.png`;
+    const logoURL     = `https://www.findstudenthousing.nl/logo-email.png`;
 
     const html = emailTemplate
       .replaceAll('{{LOGO_URL}}',   logoURL)
