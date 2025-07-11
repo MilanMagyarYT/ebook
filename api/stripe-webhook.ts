@@ -24,13 +24,13 @@ const pdfBase64 = fs
   .toString('base64');
 
 /* ── HTML template with placeholders ───────────────────────────── */
-const emailTemplate = /*html*/ `
+const emailTemplate = `
 <table width="100%" cellpadding="0" cellspacing="0" role="presentation" style="font-family:Arial,Helvetica,sans-serif;background:#f7f8fa;padding:0 16px">
   <tr><td align="center">
     <table width="600" cellpadding="0" cellspacing="0" role="presentation" style="background:#ffffff;border-radius:8px;overflow:hidden;margin:40px 0;box-shadow:0 2px 8px rgba(0,0,0,.05)">
       <tr>
-        <td style="padding:24px 32px;background:#0B1D36;color:#fff;font-size:14px">
-          <img src="{{LOGO_URL}}" width="140" alt="Find Student Housing" style="display:block">
+        <td style="padding:24px 16px;background:#0B1D36;color:#fff;font-size:14px">
+          <img src="{{LOGO_URL}}" width="200" alt="Find Student Housing" style="display:block">
           <div style="float:right;color:#bbbbbb">Order <strong>{{ORDER_NO}}</strong></div>
         </td>
       </tr>
@@ -77,17 +77,17 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
 
   if (event.type === 'checkout.session.completed') {
     const session = event.data.object as StripeNS.Checkout.Session;
-    const email   = session.customer_details?.email;
-    const name    = session.customer_details?.name ?? '';
+    const email = session.customer_details?.email;
+    const name = session.customer_details?.name ?? '';
     if (!email) return res.status(400).send('No email found');
 
     /* personalise */
-    const first  = name.split(' ')[0] || 'there';
-    const order  = session.id.slice(-8).toUpperCase();
-    const total  = (session.amount_total! / 100).toFixed(2);
-    const link   = `${process.env.BASE_URL}/api/download?session=${session.id}`;
+    const first = name.split(' ')[0] || 'there';
+    const order = session.id.slice(-8).toUpperCase();
+    const total = (session.amount_total! / 100).toFixed(2);
+    const link = `${process.env.BASE_URL}/api/download?session=${session.id}`;
 
-    const logoURL     = `https://www.findstudenthousing.nl/logo-email.png`;
+    const logoURL = `https://www.findstudenthousing.nl/logo-email.png`;
 
     const html = emailTemplate
       .replaceAll('{{LOGO_URL}}',   logoURL)
