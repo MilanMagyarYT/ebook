@@ -7,7 +7,6 @@ interface PricingCTAProps {
 
 export default function PricingCTA({ text }: PricingCTAProps) {
   const handleCheckout = async () => {
-    console.log(process.env.REACT_APP_STRIPE_PUBLIC_KEY);
     const stripe = await loadStripe(process.env.REACT_APP_STRIPE_PUBLIC_KEY!);
 
     await stripe?.redirectToCheckout({
