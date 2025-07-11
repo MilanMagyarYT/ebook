@@ -1,26 +1,32 @@
 {
   "compilerOptions": {
-    "target": "es5",
-    "lib": [
-      "dom",
-      "dom.iterable",
-      "esnext"
-    ],
-    "allowJs": true,
-    "skipLibCheck": true,
+    /* ─ General ─────────────────────────────── */
+    "target": "es2020",                      // modern enough for Node 18 & browsers
+    "lib": ["dom", "dom.iterable", "esnext"],
+
+    /* ─ Module system ───────────────────────── */
+    "module": "commonjs",                    // <-- crucial for Vercel functions
+    "moduleResolution": "node",
+    "resolveJsonModule": true,
     "esModuleInterop": true,
     "allowSyntheticDefaultImports": true,
+
+    /* ─ Strictness / safety ─────────────────── */
     "strict": true,
     "forceConsistentCasingInFileNames": true,
     "noFallthroughCasesInSwitch": true,
-    "module": "esnext",
-    "moduleResolution": "node",
-    "resolveJsonModule": true,
-    "isolatedModules": true,
-    "noEmit": true,
-    "jsx": "react-jsx"
+    "skipLibCheck": true,
+
+    /* ─ CRA specifics ───────────────────────── */
+    "allowJs": true,
+    "isolatedModules": true,                 // CRA’s Babel compile still works
+    "jsx": "react-jsx",
+
+    /* TypeScript won’t emit .js files; Vercel handles transpile for the function */
+    "noEmit": true
   },
   "include": [
-    "src"
-, "api"  ]
+    "src",   // CRA front-end
+    "api"    // serverless functions
+  ]
 }
