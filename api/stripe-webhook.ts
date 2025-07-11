@@ -30,14 +30,13 @@ const emailTemplate = /*html*/ `
     <table width="600" cellpadding="0" cellspacing="0" role="presentation" style="background:#ffffff;border-radius:8px;overflow:hidden;margin:40px 0;box-shadow:0 2px 8px rgba(0,0,0,.05)">
       <tr>
         <td style="padding:24px 32px;background:#0B1D36;color:#fff;font-size:14px">
-          <img src="https://findstudenthousing.nl/logo-email.png" width="140" alt="Find Student Housing" style="display:block">
+          <img src="{{LOGO_URL}}" width="140" alt="Find Student Housing" style="display:block">
           <div style="float:right;color:#bbbbbb">Order <strong>{{ORDER_NO}}</strong></div>
         </td>
       </tr>
       <tr><td style="padding:32px">
         <h1 style="margin:0 0 12px;font-size:20px;color:#222">Thank&nbsp;you for your purchase, {{FIRST_NAME}}!</h1>
-        <p style="margin:0 0 24px;font-size:14px;color:#444">Your payment was successful. You can download your guide immediately.</p>
-        <a href="{{DOWNLOAD_URL}}" style="display:inline-block;padding:14px 24px;background:#FFA80F;border-radius:4px;color:#fff;text-decoration:none;font-weight:bold">Download your e-book</a>
+        <p style="margin:0 0 24px;font-size:14px;color:#444">Your payment was successful. The guide is attached at the bottom of this email.</p>
         <h2 style="margin:40px 0 12px;font-size:16px;color:#222;border-bottom:1px solid #eee;padding-bottom:8px">Order summary</h2>
         <table width="100%" cellpadding="0" cellspacing="0" role="presentation" style="font-size:14px;color:#444">
           <tr><td>Your Student Housing Guide (PDF)</td><td align="right">€{{TOTAL_EUR}}</td></tr>
@@ -88,11 +87,14 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
     const total  = (session.amount_total! / 100).toFixed(2);
     const link   = `${process.env.BASE_URL}/api/download?session=${session.id}`;
 
+    const base        = process.env.BASE_URL;
+    const logoURL     = `${base}/logo-email.png`;
+
     const html = emailTemplate
-      .replaceAll('{{FIRST_NAME}}',  first)
-      .replaceAll('{{ORDER_NO}}',    order)
-      .replaceAll('{{TOTAL_EUR}}',   total)
-      .replaceAll('{{DOWNLOAD_URL}}', link);
+      .replaceAll('{{LOGO_URL}}',   logoURL)
+      .replaceAll('{{FIRST_NAME}}', first)
+      .replaceAll('{{ORDER_NO}}',   order)
+      .replaceAll('{{TOTAL_EUR}}',  total);
 
     const text = [
       `Hi ${first},`,
