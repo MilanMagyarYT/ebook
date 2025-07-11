@@ -1,5 +1,5 @@
-import { loadStripe } from '@stripe/stripe-js';
-import './CTAButton.css'; // Use your old, nice style
+import { loadStripe } from "@stripe/stripe-js";
+import "./CTAButton.css";
 
 const CTAButton = () => {
   const handleCheckout = async () => {
@@ -12,7 +12,7 @@ const CTAButton = () => {
           quantity: 1,
         },
       ],
-      mode: 'payment',
+      mode: "payment",
       successUrl: `${window.location.origin}/success`,
       cancelUrl: `${window.location.origin}/cancel`,
     });

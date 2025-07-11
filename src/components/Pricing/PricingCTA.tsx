@@ -1,5 +1,5 @@
-import { loadStripe } from '@stripe/stripe-js';
-import './PricingCTA.css';
+import { loadStripe } from "@stripe/stripe-js";
+import "./PricingCTA.css";
 
 interface PricingCTAProps {
   text: string;
@@ -7,6 +7,7 @@ interface PricingCTAProps {
 
 export default function PricingCTA({ text }: PricingCTAProps) {
   const handleCheckout = async () => {
+    console.log(process.env.REACT_APP_STRIPE_PUBLIC_KEY);
     const stripe = await loadStripe(process.env.REACT_APP_STRIPE_PUBLIC_KEY!);
 
     await stripe?.redirectToCheckout({
@@ -16,7 +17,7 @@ export default function PricingCTA({ text }: PricingCTAProps) {
           quantity: 1,
         },
       ],
-      mode: 'payment',
+      mode: "payment",
       successUrl: `${window.location.origin}/success`,
       cancelUrl: `${window.location.origin}/cancel`,
     });
