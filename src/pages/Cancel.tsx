@@ -1,10 +1,13 @@
 import "./CheckoutPages.css";
+import Logo from "../assets/logo.png";
 
 export default function Cancel() {
-  const retry = () => window.location.replace("#pricing");
+  const retry = () => window.location.replace("/");
 
   return (
     <section className="checkout-wrapper cancel">
+      <img src={Logo} alt="Logo" className="hero-logo" />
+
       <div className="icon">❌</div>
       <h1>Payment cancelled</h1>
 

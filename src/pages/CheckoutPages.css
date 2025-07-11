@@ -7,6 +7,12 @@
 .checkout-wrapper .icon{font-size:48px;margin-bottom:16px}
 .checkout-wrapper h1{margin:0 0 12px;font-size:24px;color:#0b1d36}
 .checkout-wrapper .lead{font-size:16px;color:#0B1D36;margin-bottom:24px}
+.primary-btn{
+  display:inline-block;background:#0069ff;color:#fff;padding:12px 24px;border-radius:4px;
+  font-weight:600;text-decoration:none;margin-bottom:24px;border:none;cursor:pointer
+}
+.primary-btn:hover{background:#0054d1}
 .order-info{display:flex;justify-content:space-between;font-size:14px;color:#6b7280;margin-bottom:16px}
+.meta{font-size:13px;color:#0B1D36}
 .success .icon{color:#16a34a}
 .cancel  .icon{color:#dc2626}
