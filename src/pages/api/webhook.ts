@@ -42,6 +42,7 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
 
     // Load eBook file
     const ebookPath = path.join(process.cwd(), 'public', 'ebook.pdf');
+    
     const buffer = fs.readFileSync(ebookPath);
 
     // Send email via Resend
