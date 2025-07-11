@@ -5,15 +5,14 @@ export default function Cancel() {
   const retry = () => window.location.replace("/");
 
   return (
-    <div>
+    <div className="center-screen">
       <img src={Logo} alt="Logo" className="hero-logo" />
-
       <section className="checkout-wrapper cancel">
         <div className="icon">❌</div>
         <h1>Payment cancelled</h1>
 
         <p className="lead">
-          No worries—your card hasn’t been charged. You can try again or reach
+          No worries, your card hasn’t been charged. You can try again or reach
           out if you’re having trouble.
         </p>
 
@@ -21,7 +20,7 @@ export default function Cancel() {
           Try again
         </button>
 
-        <p className="meta">
+        <p className="order-info">
           Questions?{" "}
           <a href="mailto:findstudenthousingnl@gmail.com">E-mail us</a>
         </p>

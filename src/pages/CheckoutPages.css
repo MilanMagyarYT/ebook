@@ -1,8 +1,13 @@
-.checkout-wrapper{
-    background: #e5e7eb;
-  max-width:480px;margin: auto 1.5rem;padding:1rem;border:1.5px solid #e5e7eb;border-radius:20px;
-  font-family:system-ui,-apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;text-align:center;
-  box-shadow:0 4px 10px rgba(0,0,0,.05)
+.checkout-wrapper {
+  background:#e5e7eb;
+  max-width:1280px;
+  width:100%;                /* so max-width + padding are honoured */
+  padding:1rem;
+  border:1.5px solid #e5e7eb;
+  border-radius:20px;
+  font-family:system-ui,-apple-system,'Segoe UI',Roboto,Helvetica,Arial,sans-serif;
+  text-align:center;
+  box-shadow:0 4px 10px rgba(0,0,0,.05);
 }
 .checkout-wrapper .icon{font-size:48px;margin-bottom:16px}
 .checkout-wrapper h1{margin:0 0 12px;font-size:24px;color:#0b1d36}  
@@ -18,9 +23,15 @@
 .cancel  .icon{color:#dc2626}
 
 .hero-logo {
-  display: flex;           /* add this */
-  width: 240px;
-  margin: 1rem auto;        /* now auto left/right centers */
-  align-items: center;
-  flex-direction: column;
+  display:block;              /* needed for margin auto */
+  width:240px;
+  margin:1rem auto 1.5rem;
+}
+
+.center-screen {
+  min-height: 100vh;          /* full viewport */
+  display: grid;
+  place-items: center;        /* centers children X & Y */
+  padding: 0 1.5rem;          /* side gutter at every size */
+  box-sizing: border-box;     /* include padding in width calc */
 }
