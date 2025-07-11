@@ -20,7 +20,7 @@ const stripe = new Stripe(process.env.STRIPE_SECRET_KEY!, {
 const resend = new Resend(process.env.RESEND_API_KEY);
 
 const pdfBase64 = fs
-  .readFileSync(path.join(process.cwd(), 'public', 'ebook.pdf'))
+  .readFileSync(path.join(process.cwd(), 'public', 'StudentHousingGuide.pdf'))
   .toString('base64');
 
 /* ── Handler ────────────────────────────────────────────── */
