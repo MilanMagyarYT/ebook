@@ -2,7 +2,6 @@
 /* ── Type-only imports ─────────────────────────────────────────── */
 import type StripeNS                         from 'stripe';
 import type { VercelRequest, VercelResponse } from '@vercel/node';
-import logo from '../../assets/logo.png';
 
 /* ── Runtime requires (CommonJS) ───────────────────────────────── */
 const { buffer } = require('micro');
@@ -30,21 +29,21 @@ const emailTemplate = /*html*/ `
   <tr><td align="center">
     <table width="600" cellpadding="0" cellspacing="0" role="presentation" style="background:#ffffff;border-radius:8px;overflow:hidden;margin:40px 0;box-shadow:0 2px 8px rgba(0,0,0,.05)">
       <tr>
-        <td style="padding:24px 32px;background:#0d0d0d;color:#fff;font-size:14px">
-          <img src={logo} width="140" alt="Find Student Housing" style="display:block">
+        <td style="padding:24px 32px;background:#0B1D36;color:#fff;font-size:14px">
+          <img src="https://findstudenthousing.nl/logo-email.png" width="140" alt="Find Student Housing" style="display:block">
           <div style="float:right;color:#bbbbbb">Order <strong>{{ORDER_NO}}</strong></div>
         </td>
       </tr>
       <tr><td style="padding:32px">
         <h1 style="margin:0 0 12px;font-size:20px;color:#222">Thank&nbsp;you for your purchase, {{FIRST_NAME}}!</h1>
         <p style="margin:0 0 24px;font-size:14px;color:#444">Your payment was successful. You can download your guide immediately.</p>
-        <a href="{{DOWNLOAD_URL}}" style="display:inline-block;padding:14px 24px;background:#0069ff;border-radius:4px;color:#fff;text-decoration:none;font-weight:bold">Download your e-book</a>
+        <a href="{{DOWNLOAD_URL}}" style="display:inline-block;padding:14px 24px;background:#FFA80F;border-radius:4px;color:#fff;text-decoration:none;font-weight:bold">Download your e-book</a>
         <h2 style="margin:40px 0 12px;font-size:16px;color:#222;border-bottom:1px solid #eee;padding-bottom:8px">Order summary</h2>
         <table width="100%" cellpadding="0" cellspacing="0" role="presentation" style="font-size:14px;color:#444">
           <tr><td>Your Student Housing Guide (PDF)</td><td align="right">€{{TOTAL_EUR}}</td></tr>
           <tr><td style="padding-top:8px;border-top:1px solid #eee"><strong>Total</strong></td><td align="right" style="padding-top:8px;border-top:1px solid #eee"><strong>€{{TOTAL_EUR}}</strong></td></tr>
         </table>
-        <p style="margin:32px 0 0;font-size:13px;color:#666">Need help? Reply to this e-mail or visit our <a href="https://findstudenthousing.nl/faq" style="color:#0069ff">FAQ page</a>.</p>
+        <p style="margin:32px 0 0;font-size:13px;color:#666">Need help? Reply to this e-mail or visit our <a href="https://findstudenthousing.nl/faq" style="color:#0B1D36">FAQ page</a>.</p>
       </td></tr>
       <tr><td style="background:#f1f3f5;padding:20px 32px;font-size:11px;color:#777">
         Find Student Housing • Nieuwe Ebbingestraat 97, 9712 ND Groningen, NL<br>
@@ -87,7 +86,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
     const first  = name.split(' ')[0] || 'there';
     const order  = session.id.slice(-8).toUpperCase();
     const total  = (session.amount_total! / 100).toFixed(2);
-    const link   = `${process.env.BASE_URL}/download?session=${session.id}`;
+    const link   = `${process.env.BASE_URL}/api/download?session=${session.id}`;
 
     const html = emailTemplate
       .replaceAll('{{FIRST_NAME}}',  first)
