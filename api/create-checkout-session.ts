@@ -36,9 +36,13 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
 
     const session = await stripe.checkout.sessions.create(sessionParams);
 
+    if (!session.url) {
+      return res.status(500).json({ error: 'No session URL returned from Stripe' });
+    }
+    
     res.status(200).json({ url: session.url });
   } catch (err: any) {
-    console.error('❌ Stripe session error:', err);
+    console.error('Stripe session error:', err);
     res.status(500).json({ error: 'Failed to create Stripe session' });
   }
 }

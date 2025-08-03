@@ -9,8 +9,12 @@ export default function PricingCTA({ text }: PricingCTAProps) {
     const ref = new URLSearchParams(window.location.search).get("ref") ?? "none";
     const response = await fetch(`/api/create-checkout-session?ref=${ref}`);
     const data = await response.json();
-    window.location.href = data.url;
-    console.log("Stripe public key:", process.env.REACT_APP_STRIPE_PUBLIC_KEY);
+    if (data?.url) {
+      window.location.href = data.url;
+    } else {
+      console.error("Checkout session failed", data);
+      alert("Something went wrong. Please try again later.");
+    }
   };
 
   return (

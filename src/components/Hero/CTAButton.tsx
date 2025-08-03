@@ -7,7 +7,12 @@ const CTAButton = () => {
     const response = await fetch(`/api/create-checkout-session?ref=${ref}`);
     const data = await response.json();
 
+    if (data?.url) {
     window.location.href = data.url;
+  } else {
+    console.error("Checkout session failed", data);
+    alert("Something went wrong. Please try again later.");
+  }
   };
 
 
