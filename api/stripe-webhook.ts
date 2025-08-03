@@ -78,6 +78,12 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
 
   if (event.type === 'checkout.session.completed') {
     const session = event.data.object as StripeNS.Checkout.Session;
+    const promoCodeId = (session.discounts?.[0]?.promotion_code as string) ?? null;
+    let promoCodeStr = '';
+    if (promoCodeId) {
+      const promo = await stripe.promotionCodes.retrieve(promoCodeId);
+      promoCodeStr = promo.code;
+    }
     
     const email = session.customer_details?.email;
     const name = session.customer_details?.name ?? '';

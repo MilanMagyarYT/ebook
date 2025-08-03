@@ -1,22 +1,15 @@
-import { loadStripe } from "@stripe/stripe-js";
 import "./CTAButton.css";
 
 const CTAButton = () => {
   const handleCheckout = async () => {
-    const stripe = await loadStripe(process.env.REACT_APP_STRIPE_PUBLIC_KEY!);
+    const ref = new URLSearchParams(window.location.search).get("ref") ?? "none";
 
-    await stripe?.redirectToCheckout({
-      lineItems: [
-        {
-          price: process.env.REACT_APP_STRIPE_PRICE_ID!, // Replace in .env
-          quantity: 1,
-        },
-      ],
-      mode: "payment",
-      successUrl: `${window.location.origin}/success`,
-      cancelUrl: `${window.location.origin}/cancel`,
-    });
+    const response = await fetch(`/api/create-checkout-session?ref=${ref}`);
+    const data = await response.json();
+
+    window.location.href = data.url;
   };
+
 
   return (
     <button className="cta-button" onClick={handleCheckout}>
