@@ -20,7 +20,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
     const sessionParams: Stripe.Checkout.SessionCreateParams = {
       line_items: [
         {
-          price: process.env.STRIPE_PRICE_ID!,
+          price: process.env.REACT_APP_STRIPE_PRICE_ID!,
           quantity: 1,
         },
       ],
@@ -39,7 +39,7 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
     if (!session.url) {
       return res.status(500).json({ error: 'No session URL returned from Stripe' });
     }
-    
+
     res.status(200).json({ url: session.url });
   } catch (err: any) {
     console.error('Stripe session error:', err);
