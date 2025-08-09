@@ -1,6 +1,5 @@
 import './Pricing.css';
 import CTAButton from './PricingCTA';
-import Footer from './Footer';
 
 export default function Pricing() {
   return (
@@ -9,22 +8,25 @@ export default function Pricing() {
         <span className="pricing-label-badge">Pricing</span>
       </div>
 
-      <h2 className="pricing-title">Find your room faster</h2>
+      <h2 className="pricing-title">Find your home in under 30 days</h2>
       <p className="pricing-subtitle">One-time payment</p>
 
       <div className="pricing-card">
         <p className="pricing-card-title">Student Housing Guide</p>
         <h3 className="pricing-price">€14.99</h3>
-        <p className="pricing-description">
-          A complete housing guide including daily application strategies and insider advice. The e-book will be sent to your email right after purchase.
-        </p>
+        <ul className="pricing-description">
+          <li><span>40+ pages</span></li>
+          <li><span>Written by students who already succeeded</span></li>
+          <li><span>30 day plan, sample emails & checklist</span></li>
+          <li><span>Essential red flags</span></li>
+          <li><span>Money-back if it doesn’t help</span></li>
+          <li><span>24/7 support whenever you need help</span></li>
+        </ul>
         <CTAButton text="Buy Now" />
         <p className="pricing-guarantee">
-          If you follow our daily strategy and don’t find housing within 2 months, we’ll personally help you at no extra cost.
+          Follow our strategy and get a room in under 30 days, or we'll help you personally, with 24/7 support
         </p>
       </div>
-
-      <Footer />
     </section>
   );
 }

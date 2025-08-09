@@ -4,8 +4,9 @@ const InfoBox = () => {
   return (
     <div className="info-box">
       <p>
-        Get a place in 2 months or we’ll
-        help you find one, for <span className="highlight">free!</span>
+        Get <span className="highlight">24/7 help</span> and a <span className="highlight">full refund</span> 
+        <br />
+        if you don't find housing!
       </p>
     </div>
   );

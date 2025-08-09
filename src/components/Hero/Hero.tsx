@@ -35,9 +35,9 @@ const Hero = () => {
             <ImageBox />
           </div>
           <div className="hero-content-wrapper">
-            <h2 className="hero-subtitle">Find your student room faster</h2>
+            <h2 className="hero-subtitle">Find your next home in <br /> under 30 days</h2>
             <p className="hero-description">
-              A step-by-step e-book showing how to actually rent a place
+              A step-by-step e-book showing how to get a place, even if you're starting late
             </p>
             <CTAButton />
             <div className="hero-info-wrapper">
@@ -49,9 +49,10 @@ const Hero = () => {
         <>
           <div className="hero-content-box">
             <ImageBox />
-            <h2 className="hero-subtitle">Find your student room faster</h2>
+            <h2 className="hero-subtitle">Find a home in <br />
+              under 30 days</h2>
             <p className="hero-description">
-              A step-by-step e-book showing how to actually rent a place
+              A step-by-step e-book showing how to get a place, even if you're starting late
             </p>
           </div>
           <CTAButton />

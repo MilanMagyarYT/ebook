@@ -1,0 +1,129 @@
+:root {
+  --dark-blue: #12283E;
+  --light-cream: #FFFDF3;
+  --accent-yellow: #FFA80F;
+  --muted-blue: #42619A;
+  --muted-blue-50: rgba(66, 97, 154, 0.5);
+  --title-color: #12283E;
+}
+
+.faq-section {
+  background-color: var(--dark-blue);
+  color: var(--light-cream);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 60px 20px;
+}
+
+.faq-label-wrapper {
+  margin-bottom: 10px;
+}
+
+.faq-label-badge {
+  display: inline-block;
+  padding: 0px 12px;
+  background-color: #0B1D36;
+  border-radius: 28px;
+  border: 2.5px solid #263B6B;
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 18px;
+  letter-spacing: -0.5px;
+  color: #C9C9C9;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+.faq-title {
+  font-size: 36px;
+  letter-spacing: -0.5px;
+  line-height: 32px;
+  margin-top: 20px;
+  margin-bottom: 10px;
+  font-family: 'Inter', sans-serif;
+  font-weight: 700;
+  color: var(--light-cream);
+}
+
+.faq-subtitle {
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 24px;
+  color: #C9C9C9;
+  max-width: 600px;
+  margin-bottom: 50px;
+  font-family: 'Inter', sans-serif;
+  letter-spacing: -0.5px;
+}
+
+.faq-list {
+  width: 100%;
+  max-width: 800px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* === Accordion Box === */
+.faq-box {
+  background-color: var(--light-cream);
+  color: var(--title-color);
+  border-radius: 20px;
+  padding: 20px;
+  margin-bottom: 20px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  width: 100%;
+  text-align: left;
+}
+
+.faq-box:hover {
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+}
+
+.faq-box.open {
+  background-color: #f9f7f1;
+}
+
+.faq-box .faq-question {
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 24px;
+}
+
+.faq-box .faq-answer {
+  margin-top: 15px;
+  font-size: 16px;
+  color: #444;
+  line-height: 24px;
+  font-weight: 400;
+}
+
+/* === Responsive (Mobile) === */
+@media (max-width: 768px) {
+  .faq-title {
+    font-size: 28px;
+    line-height: 34px;
+  }
+
+  .faq-subtitle {
+    font-size: 16px;
+    line-height: 22px;
+    max-width: 90%;
+  }
+
+  .faq-box {
+    padding: 15px;
+  }
+
+  .faq-box .faq-question {
+    font-size: 16px;
+  }
+
+  .faq-box .faq-answer {
+    font-size: 14px;
+  }
+}

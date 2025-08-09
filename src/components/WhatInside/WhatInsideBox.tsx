@@ -1,14 +1,21 @@
 import './WhatInsideBox.css';
+import DropdownList from './DropdownList';
 
 interface WhatInsideBoxProps {
   number: number;
   imageSrc: string;
   title: string;
-  description: string;
-  iconSizeClass: string; // NEW prop
+  subchapters: string[];
+  iconSizeClass: string;
 }
 
-export default function WhatInsideBox({ number, imageSrc, title, description, iconSizeClass }: WhatInsideBoxProps) {
+export default function WhatInsideBox({
+  number,
+  imageSrc,
+  title,
+  subchapters,
+  iconSizeClass,
+}: WhatInsideBoxProps) {
   return (
     <div className="whatinside-box">
       <div className="box-number">{number}</div>
@@ -16,7 +23,7 @@ export default function WhatInsideBox({ number, imageSrc, title, description, ic
         <img src={imageSrc} alt={title} className={`box-icon ${iconSizeClass}`} />
       </div>
       <h3 className="box-title">{title}</h3>
-      <p className="box-description">{description}</p>
+      <DropdownList items={subchapters} />
     </div>
   );
 }

@@ -1,9 +1,10 @@
 .footer {
   background-color: #12283E;
-  padding: 40px 20px;
+  padding: 40px;
   width: 100%;
   box-sizing: border-box;
   overflow-x: hidden;
+  margin-bottom: -60px;
 }
 
 .footer-content {

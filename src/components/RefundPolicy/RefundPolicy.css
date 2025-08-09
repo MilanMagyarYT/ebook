@@ -1,0 +1,103 @@
+:root {
+  --dark-blue: #12283E;
+  --light-cream: #FFFDF3;
+  --accent-yellow: #FFA80F;
+  --title-color: #12283E;
+}
+
+.refund-policy-section {
+  background: var(--dark-blue);
+  color: var(--light-cream);
+  display: flex;
+  justify-content: center;
+  padding: 80px 20px;
+}
+
+.refund-policy-wrapper {
+  width: 100%;
+  max-width: 820px;
+  text-align: left;
+}
+
+.refund-logo {
+  width: 240px;
+  height: auto;
+  display: block;
+  margin: 0 auto 24px;
+}
+
+.refund-title {
+  font-family: 'Inter', sans-serif;
+  font-size: 40px;
+  font-weight: 800;
+  letter-spacing: -0.5px;
+  margin: 0 0 16px;
+  text-align: center;
+}
+
+.refund-subtitle {
+  font-family: 'Inter', sans-serif;
+  font-size: 20px;
+  font-weight: 700;
+  margin: 28px 0 8px;
+  color: #F3EDE0;
+}
+
+.refund-text {
+  font-family: 'Inter', sans-serif;
+  font-size: 18px;
+  line-height: 1.6;
+  color: #EAE7DA;
+  margin: 0 0 16px;
+}
+
+.refund-list {
+  margin: 0 0 16px 18px;
+  padding: 0;
+  color: #EAE7DA;
+  font-family: 'Inter', sans-serif;
+  font-size: 18px;
+  line-height: 1.6;
+}
+
+.refund-btn {
+  display: inline-block;
+  background: linear-gradient(180deg, var(--accent-yellow) 0%, #F09819 100%);
+  color: var(--light-cream);
+  border: none;
+  border-radius: 16px;
+  padding: 12px 24px;
+  font-size: 18px;
+  font-weight: 600;
+  letter-spacing: -0.5px;
+  text-decoration: none;
+  box-shadow: inset 0 2px 4px rgba(0,0,0,.35);
+  transition: transform .15s ease-in-out;
+  margin: 8px 0 4px;
+}
+
+.refund-btn:hover { transform: translateY(-1px); }
+
+.refund-small {
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
+  color: #C9C9C9;
+  margin-top: 8px;
+}
+
+.refund-small a { color: #FFC55A; text-decoration: underline; }
+
+.refund-privacy {
+  font-family: 'Inter', sans-serif;
+  font-size: 14px;
+  color: #BFBFBF;
+  margin-top: 16px;
+}
+
+/* Desktop */
+@media (min-width: 768px) {
+  .refund-title { font-size: 56px; }
+  .refund-subtitle { font-size: 22px; }
+  .refund-text, .refund-list { font-size: 20px; }
+  .refund-btn { font-size: 20px; padding: 14px 28px; }
+}
