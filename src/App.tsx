@@ -2,7 +2,7 @@ import "./App.css";
 import Hero from "./components/Hero/Hero";
 import Testimonials from "./components/Testimonials/Testimonials";
 import WhatInside from "./components/WhatInside/WhatInside";
-import VideoIntro from "./components/VideoIntro/VideoIntro";
+//import VideoIntro from "./components/VideoIntro/VideoIntro";
 import Pricing from "./components/Pricing/Pricing";
 import Success from "./pages/Success";
 import Cancel from "./pages/Cancel";

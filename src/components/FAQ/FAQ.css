@@ -59,7 +59,7 @@
 }
 
 .faq-list {
-  width: 100%;
+  padding: 0rem -0.5rem;
   max-width: 800px;
   display: flex;
   flex-direction: column;
