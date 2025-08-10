@@ -15,7 +15,7 @@ const VideoIntro = () => {
 
       <iframe
         className="video-iframe"
-        src="https://youtu.be/Ll7BF0W1rXA"
+        src="https://www.youtube.com/embed/Ll7BF0W1rXA"
         title="Overview Video"
         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
         allowFullScreen
