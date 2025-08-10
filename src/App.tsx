@@ -21,7 +21,7 @@ function App() {
           element={
             <div className="App">
               <Hero />
-              {/*<VideoIntro/>*/}
+              <VideoIntro />
               <WhatInside />
               <Testimonials />
               <Pricing />
