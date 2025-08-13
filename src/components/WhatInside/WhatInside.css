@@ -38,16 +38,16 @@
     color: #C9C9C9;
     text-align: center;
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
-    margin-bottom: 20px;
-    margin-top: -40px;
+    margin-bottom: 40px;
+    margin-top: -60px;
   }
   
   .whatinside-title {
     font-size: 36px;
     letter-spacing: -0.5px;
     line-height: 40px;
-    margin-top: 10px;
-    margin-bottom: 10px;
+    margin-top: -20px;
+    margin-bottom: 0px;
     font-family: 'Inter', sans-serif;
     font-weight: 700;
     color: #FFFDF3;
@@ -182,7 +182,7 @@
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  background: linear-gradient(180deg, var(--accent-yellow) 0%, #F09819 100%);
+  background: linear-gradient(180deg, var(--accent-yellow) 0%, #FFA80F 100%);
   color: var(--light-cream);
   border: none;
   border-radius: 14px;

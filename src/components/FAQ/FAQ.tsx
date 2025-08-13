@@ -8,10 +8,6 @@ const faqItems = [
     answer: 'The eBook is sent instantly to your email right after purchase.',
   },
   {
-    question: 'Can this really help me find a room?',
-    answer: 'Yes, the strategies were written by students who successfully found rooms using these exact tips.',
-  },
-  {
     question: 'What if I don’t find housing?',
     answer: 'We offer personal assitance 24/7 and if you don’t find housing within 30 days, we give your money back.',
   },
@@ -19,6 +15,27 @@ const faqItems = [
     question: 'Is it a subscription?',
     answer: 'Nope! It\'s a one-time payment, no hidden fees or subscriptions.',
   },
+  {
+    question: 'Who is this eBook for?',
+    answer: 'It’s designed for both international and Dutch students looking for housing in the Netherlands.',
+  },
+  {
+    question: 'How quickly can I start using the strategies?',
+    answer: 'Immediately! Once you get the eBook, you can follow the steps and start applying for housing the same day.',
+  },
+  {
+    question: 'What makes this different from free advice online?',
+    answer: 'Our guide is based on real experiences from students who successfully found housing. It’s structured, proven, and saves you hours of trial and error.',
+  },
+  {
+    question: 'Will this work for any city in the Netherlands?',
+    answer: 'Yes, our strategies work nationwide, with specific tips for bigger areas such as Amsterdam, Utrecht, Rotterdam or Groningen',
+  },
+  {
+    question: 'Can I share the eBook with a friend?',
+    answer: 'Your purchase is for personal use only, but your friend can get their own copy and follow along with you.',
+  },
+
 ];
 
 export default function FAQ() {

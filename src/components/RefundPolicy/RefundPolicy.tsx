@@ -10,8 +10,8 @@ export default function RefundPolicy() {
         <h1 className="refund-title">Refund Policy</h1>
 
         <p className="refund-text">
-          We’re a small team, and this is our first eBook: <em>“Finding Housing in the Netherlands – Full Guide.”</em>
-          We’ve poured a lot into it. Because it’s a digital product, we can’t offer automatic refunds,      but we do want to be fair.
+          We’re a small team, and this is our first eBook: <em>“Student Housing in The Netherlands – Ultimate Guide.”</em>
+          We’ve poured a lot into it. Because it’s a digital product, we can’t offer automatic refunds, but we do want to be fair.
         </p>
 
         <h3 className="refund-subtitle">When a refund may be possible</h3>
@@ -29,7 +29,7 @@ export default function RefundPolicy() {
         </ul>
 
         <p className="refund-text">
-          Need help? Email us at <a href="mailto:findstudenthousingnl@gmail.com">findstudenthousingnl@gmail.com</a>.
+          Need help? Email us at <a href="mailto:findstudenthousingnl@gmail.com">findstudenthousingnl@gmail.com</a>
         </p>
 
         {/* CTA to Google Form */}

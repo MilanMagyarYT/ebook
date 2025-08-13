@@ -15,8 +15,8 @@
 }
 
 .testimonials-label-wrapper {
-  margin-bottom: 10px;
-  margin-top: -20px;
+  margin-bottom: 0px;
+  margin-top: -40px;
 }
 
 .testimonials-label-badge {
@@ -33,7 +33,6 @@
   color: #C9C9C9;
   text-align: center;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
-  margin-top: -30px;
 }
 
 .testimonials-title {
@@ -41,7 +40,7 @@
   letter-spacing: -0.5px;
   line-height: 32px;
   margin-top: 20px;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
   font-family: 'Inter', sans-serif;
   font-weight: 700;
   color: var(--light-cream);
@@ -88,6 +87,7 @@
   margin-bottom: 0px;
   letter-spacing: 0.2px;
   margin-left: 20px;
+  color: #FFA80F;
 }
 
 .testimonials-text {
@@ -100,6 +100,27 @@
   margin-left: 20px;
   margin-right: 10px;
   letter-spacing: -0.5px;
+}
+
+.testimonial-footer {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 0 20px 16px;
+  margin-top: 0px;
+}
+
+.testimonial-avatar {
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  object-fit: cover;
+  flex: 0 0 44px;
+  border: 2px solid rgba(18, 40, 62, 0.08);
+}
+
+.testimonial-avatar.placeholder {
+  background: linear-gradient(180deg, #E9E4D8, #D7D1C4);
 }
 
 .testimonials-name {
@@ -117,11 +138,10 @@
   letter-spacing: -0.5px;
 }
 
-/* controls under the card */
 .testimonials-controls {
   width: 100%;
   display: flex;
-  flex-direction: column;   /* center hint + button */
+  flex-direction: column;
   align-items: center;
   gap: 12px;
   margin-top: 16px;
@@ -158,7 +178,6 @@
 .next-testimonial-btn:active { transform: translateY(0); opacity: 0.9; }
 .next-testimonial-btn .arrow { transform: translateY(1px); }
 
-/* tiny dots indicator */
 .testimonials-dots {
   display: flex;
   gap: 6px;
@@ -182,6 +201,8 @@
     padding-bottom: 100px;
   }
 
+  .testimonial-avatar { width: 56px; height: 56px; }
+  
   .testimonials-title {
     font-size: 60px;
     font-weight: 700;

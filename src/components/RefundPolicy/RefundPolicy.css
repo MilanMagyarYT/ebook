@@ -35,6 +35,11 @@
   text-align: center;
 }
 
+.refund-policy-wrapper a[href^="mailto:"]{
+  color: #FFA80F;
+  text-decoration: underline;
+}
+
 .refund-subtitle {
   font-family: 'Inter', sans-serif;
   font-size: 20px;
