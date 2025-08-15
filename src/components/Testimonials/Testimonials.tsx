@@ -4,9 +4,9 @@ import TestimonialsTitle from './TestimonialsTitle';
 import TestimonialsSubtitle from './TestimonialsSubtitle';
 import TestimonialsCard from './TestimonialsCard';
 import { useState } from 'react';
-import testimonialEmma from '../../assets/testimonial1.jpg';
-import testimonialLucas from '../../assets/testimonial2.jpeg';
-import testimonialSanne from '../../assets/avatar-3.jpg';
+import testimonialEmma from '../../assets/avatar1.jpg';
+import testimonialLucas from '../../assets/avatar2.jpg';
+import testimonialSanne from '../../assets/avatar3.jpg';
 
 
 const testimonials = [
